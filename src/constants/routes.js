@@ -7,6 +7,8 @@ export const REGISTER_ROUTE = "/register";
 export const FORGET_PASSWORD_ROUTE = "/forget-password";
 export const RESET_PASSWORD_ROUTE = "/reset-password";
 
+export const CART_PAGE_ROUTE = "/cart";
+
 // Admin routes
 export const DASHBOARD_ROUTE = "/dashboard";
 export const PRODUCT_MANAGEMENT_ROUTE = "/product-management";

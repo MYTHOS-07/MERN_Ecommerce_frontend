@@ -1,9 +1,10 @@
-import { FaBars, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
-import Logo from "./Logo";
-import NavLink from "./NavLink";
-import ThemeToggler from "./ThemeToggler";
 import User from "./User";
+import ThemeToggler from "./ThemeToggler";
+import NavLink from "./NavLink";
+import Logo from "./Logo";
+import HeaderCart from "./HeaderCart";
 
 export default function Header() {
   return (
@@ -17,9 +18,8 @@ export default function Header() {
           <div className="flex items-center gap-2">
             {/* themeToggler */}
             <ThemeToggler />
-            <button className="text-gray-700 px-2 py-1 dark:text-gray-300 hover:text-primary">
-              <FaShoppingCart />
-            </button>
+            {/* shopping cart */}
+            <HeaderCart />
             <User />
             <button className="block md:hidden px-2 py-1 text-gray-700 dark:text-gray-300">
               <FaBars />

@@ -1,6 +1,6 @@
-import { MdOutlineAddShoppingCart } from "react-icons/md";
-import { FaImage } from "react-icons/fa";
 import React from "react";
+import { FaImage } from "react-icons/fa";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import ProductsFilter from "@/components/products/Filter";
 
 const LoadingCard = () => {
