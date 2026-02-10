@@ -45,3 +45,9 @@ export async function payViaCash(id) {
 
   return response.data;
 }
+
+export async function payVaiStripe(id) {
+  const response = await api.post(`/api/orders/${id}/payment/stripe`);
+
+  return response.data;
+}

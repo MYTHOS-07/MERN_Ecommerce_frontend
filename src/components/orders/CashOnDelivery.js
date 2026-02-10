@@ -25,3 +25,7 @@ const CashOnDelivery = ({ id }) => {
 };
 
 export default CashOnDelivery;
+
+
+// 59 vedio
+// 1:12:18

@@ -1,9 +1,9 @@
 "use client";
 
-import { payViakhalti } from "@/api/orders";
 import React, { useState } from "react";
-import { toast } from "react-toastify";
 import Spinner from "../Spinner";
+import { payViakhalti } from "@/api/orders";
+import { toast } from "react-toastify";
 
 const PayViaKhalti = ({ id }) => {
   const [loading, setLoading] = useState(false);

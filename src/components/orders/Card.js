@@ -1,16 +1,14 @@
-import { format, addDays } from "date-fns";
+import CashOnDelivery from "./CashOnDelivery";
 import Image from "next/image";
+import OrderStatus from "./status";
+import PayViaKhalti from "./PayViaKhalti";
+import PayViaStripe from "./payVaiStripe";
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
-import OrderStatus from "./status";
+import { ORDER_STATUS_PENDING } from "@/constants/order";
 import { cancelOrder } from "@/api/orders";
+import { format, addDays } from "date-fns";
 import { toast } from "react-toastify";
-import {
-  ORDER_STATUS_CANCELLED,
-  ORDER_STATUS_PENDING,
-} from "@/constants/order";
-import PayViaKhalti from "./PayViaKhalti";
-import CashOnDelivery from "./CashOnDelivery";
 
 const OrderCard = ({ order }) => {
   const isProductAvailable = order.orderItems.some((item) => item.product);
@@ -53,7 +51,7 @@ const OrderCard = ({ order }) => {
       <div className="w-full px-6">
         {order.orderItems.map((item) => (
           <div
-            key={item.id}
+            key={item._id}
             className="flex flex-col lg:flex-row items-center py-6 border-b border-gray-200 dark:border-gray-600 gap-6 w-full"
           >
             <div className="img-box max-lg:w-full">
@@ -127,9 +125,7 @@ const OrderCard = ({ order }) => {
           {order.status == ORDER_STATUS_PENDING ? (
             <div className="pl-6 py-3 max-lg:text-center flex items-center gap-3">
               <PayViaKhalti id={order._id} />
-              <button className="bg-blue-700 hover:bg-blue-900 text-white rounded-md px-4 py-2 cursor-pointer">
-                Pay via Stripe
-              </button>
+              <PayViaStripe id={order._id} totalPrice={order.totalPrice} />
               <CashOnDelivery id={order._id} />
             </div>
           ) : null}
