@@ -5,14 +5,18 @@ import PayViaKhalti from "./PayViaKhalti";
 import PayViaStripe from "./payVaiStripe";
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
-import { ORDER_STATUS_PENDING } from "@/constants/order";
+import {
+  ORDER_STATUS_CANCELLED,
+  ORDER_STATUS_PENDING,
+} from "@/constants/order";
 import { cancelOrder } from "@/api/orders";
 import { format, addDays } from "date-fns";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const OrderCard = ({ order }) => {
   const isProductAvailable = order.orderItems.some((item) => item.product);
-
+  const router = useRouter();
   if (!isProductAvailable) return;
 
   function cancel() {
@@ -21,7 +25,7 @@ const OrderCard = ({ order }) => {
         .then(() => {
           toast.success("Order Cancelled successfully");
 
-          router.refresh();
+          router.push(`?status=${ORDER_STATUS_CANCELLED}`);
         })
         .catch(() => {
           toast.error("Order Cancelled Failed");

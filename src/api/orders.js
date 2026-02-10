@@ -6,8 +6,22 @@ export async function createOrder(data) {
   return response.data;
 }
 
+export async function getAllOrders(status) {
+  let url = "/api/orders";
+
+  if (status) url += `?status=${status}`;
+
+  const response = await api.get(url);
+
+  return response.data;
+}
+
 export async function getOrdersByUser(status) {
-  const response = await api.get(`/api/orders/user?status=${status}`);
+  let url = "/api/orders/user";
+
+  if (status) url += `?status=${status}`;
+
+  const response = await api.get(url);
 
   return response.data;
 }

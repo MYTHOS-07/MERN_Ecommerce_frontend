@@ -1,15 +1,22 @@
 import { payViaCash } from "@/api/orders";
-import React from "react";
+import { ORDER_STATUS_CONFIRMED } from "@/constants/order";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const CashOnDelivery = ({ id }) => {
+  const router = useRouter();
+
   function confirmOrder() {
-    if (confirm("Are you sure ?")) {
+    if (confirm("Are you sure?")) {
       payViaCash(id)
         .then(() => {
-          toast.success("Order update Successful");
+          toast.success("Order update success.");
+
+          router.push(`?status=${ORDER_STATUS_CONFIRMED}`);
         })
-        .catch(() => {
-          toast.error("Order update failed");
+        .catch((error) => {
+          console.log(error);
+          toast.error("Order update failed.");
         });
     }
   }
@@ -17,15 +24,11 @@ const CashOnDelivery = ({ id }) => {
   return (
     <button
       onClick={confirmOrder}
-      className="bg-green-700 hover:bg-green-900 text-white rounded-md px-4 py-2 cursor-pointer"
+      className="bg-green-700  hover:bg-green-800 text-white rounded-md px-4 py-2 cursor-pointer"
     >
-      Cash On Delivery
+      Cash on Delivery
     </button>
   );
 };
 
 export default CashOnDelivery;
-
-
-// 59 vedio
-// 1:12:18

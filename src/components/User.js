@@ -79,7 +79,6 @@ const User = () => {
                 </Link>
                 <button
                   onClick={() => dispatch(logout())}
-                  href={""}
                   className="py-1 px-4 text-red-600 dark:text-red-100 dark:hover:bg-red-700 hover:bg-red-200 text-left cursor-pointer"
                 >
                   Logout

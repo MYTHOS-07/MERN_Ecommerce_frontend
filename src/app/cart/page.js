@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { createOrder } from "@/api/orders"; // Add this import
 import { useRouter } from "next/navigation";
+import { ORDER_STATUS_PENDING } from "@/constants/order";
 
 const CartPage = () => {
   const { products, totalPrice } = useSelector((state) => state.cart);
@@ -43,7 +44,7 @@ const CartPage = () => {
       totalPrice: Math.ceil((totalPrice - totalPrice * 0.1) * 1.13),
     })
       .then(() => {
-        router.push(ORDER_PAGE_ROUTE);
+        router.push(`${ORDER_PAGE_ROUTE}?status=${ORDER_STATUS_PENDING}`);
 
         toast.success("Order created successfully", {
           onClose: () => {

@@ -15,7 +15,6 @@ const PayViaKhalti = ({ id }) => {
         window.location.href = data.payment_url; // for redirecting the url from khalti
       })
       .catch((error) => {
-        console.log(error);
         toast.error("Order payment failed");
       })
       .finally(() => setLoading(false));

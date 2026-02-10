@@ -11,7 +11,6 @@ const OrderPayment = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = useParams();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const status = searchParams?.get("status");
@@ -19,26 +18,22 @@ const OrderPayment = () => {
     confirmPayment(params.id, status)
       .then(() => {
         toast.success("Order payment Successful");
+
+        router.push(`${ORDER_PAGE_ROUTE}?status=${ORDER_STATUS_CONFIRMED}`);
       })
       .catch(() => {
         toast.error("Order payment failed");
-      })
-      .finally(() => {
-        router.push(ORDER_PAGE_ROUTE);
-
-        setLoading(false);
+        router.replace(ORDER_PAGE_ROUTE);
       });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading)
-    return (
-      <div className="py-24 flex items-center justify-center">
-        <Spinner className="h-20 w-20 fill-primary" />
-      </div>
-    );
-
-  return <></>;
+  return (
+    <div className="py-24 flex items-center justify-center">
+      <Spinner className="h-20 w-20 fill-primary" />
+    </div>
+  );
 };
 
 export default OrderPayment;
