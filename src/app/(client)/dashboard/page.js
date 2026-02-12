@@ -1,9 +1,12 @@
-import React from 'react'
+import OrderStats from "@/components/dashboard/DashboardCard";
+import React from "react";
 
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
-  )
-}
+    <section>
+      <OrderStats />
+    </section>
+  );
+};
 
-export default DashboardPage
+export default DashboardPage;

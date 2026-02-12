@@ -40,13 +40,13 @@ const RegisterPage = () => {
   }, [error]);
 
   return (
-    <div className="flex items-center justify-center md:w-lg px-4  py-4 md:mt-20 lg:mt-1 bg-white dark:bg-slate-800 rounded-2xl m-auto md:mx-30">
+    <div className="flex items-center justify-center md:w-lg px-4  py-4 md:mt-20 lg:mt-1 bg-white text-white dark:bg-slate-800 rounded-2xl m-auto md:mx-30">
       <div className="flex w-full flex-col max-w-96">
         {/* logo */}
         <Logo className="text-2xl" />
         {/* Form */}
         <form onSubmit={handleSubmit(submitForm)}>
-          <p className="mt-4 text-base text-gray-900/90">
+          <p className="mt-4 text-base dark:text-gray-100 text-gray-900/90">
             Please enter your details to register
           </p>
           <div className="mt-4">

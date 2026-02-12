@@ -27,13 +27,13 @@ const ForgetPasswordPage = () => {
   }
 
   return (
-    <div className="flex items-center justify-center md:w-lg px-4 py-10 bg-white dark:bg-slate-800 rounded-2xl mt-30 md:m-auto md:mx-30 md:my-20 ">
+    <div className="flex items-center justify-center md:w-lg px-4 py-10 bg-white dark:bg-slate-800 rounded-2xl mt-30 md:m-auto md:mx-30 md:my-20  dark:text-white">
       <div className="flex w-full flex-col max-w-96 gap-5">
         {/* logo */}
         <Logo className="text-2xl" />
         {/* Form */}
         <form onSubmit={handleSubmit(submitForm)}>
-          <p className="text-base text-gray-900/90">
+          <p className="text-base text-gray-900/90 dark:text-gray-100">
             Please Enter your Password to receive reset password link
           </p>
           <div className="mt-5">

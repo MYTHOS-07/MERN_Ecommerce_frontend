@@ -7,6 +7,14 @@ const nextConfig = {
         hostname: "res.cloudinary.com",
         protocol: "http",
       },
+      {
+        hostname: "images.unsplash.com",
+        protocol: "https",
+      },
+         {
+        hostname: "media.istockphoto.com",
+        protocol: "https",
+      },
     ],
   },
 };
