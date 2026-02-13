@@ -7,8 +7,6 @@ import { FaImage } from "react-icons/fa";
 const ProductImage = ({ images }) => {
   const [image, setImage] = useState(images[0]);
 
-  console.log(images);
-
   return (
     <div>
       <div className="flex justify-center">

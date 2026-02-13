@@ -1,22 +1,44 @@
+"use client";
+
 import Link from "next/link";
 import PaginationPage from "@/components/admin/products/Pagination";
 import ProductsTable from "@/components/admin/products/Table";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUpload } from "react-icons/fa";
 import { getProducts } from "@/api/products";
+import { useSearchParams } from "next/navigation";
+import { useSelector } from "react-redux";
+import { ROLE_MERCHANT } from "@/constants/roles";
 
-const ProductManagementPage = async ({ searchParams }) => {
+const ProductManagementPage = () => {
+  const [products, setProducts] = useState([]);
+
   const PAGE_LIMIT = 10;
 
-  const query = await searchParams;
+  const searchParams = useSearchParams();
 
-  const currentPage = query?.page ?? 1;
+  const currentPage = searchParams.get("page") ?? 1;
+  const sort = searchParams.get("sort");
 
-  const products = await getProducts({
-    ...query,
-    limit: PAGE_LIMIT,
-    offset: PAGE_LIMIT * (currentPage - 1) + 1,
-  });
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    const filter = {
+      sort,
+      limit: PAGE_LIMIT,
+      offset: PAGE_LIMIT * (currentPage - 1),
+    };
+
+    if (user.roles.includes(ROLE_MERCHANT)) {
+      filter.createdBy = user._id;
+    }
+
+    getProducts(filter).then((data) => {
+      setProducts(data);
+    });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, sort]);
 
   return (
     <>

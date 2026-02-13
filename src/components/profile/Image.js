@@ -53,6 +53,7 @@ const ProfileImage = () => {
           width={200}
           alt={user.name}
           src={defaultUserPng}
+          loading="eager"
           className="h-32 w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 rounded-full bg-gray-100 border-4 border-gray-300 object-cover"
         />
       )}

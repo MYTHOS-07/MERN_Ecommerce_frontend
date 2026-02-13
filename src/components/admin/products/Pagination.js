@@ -1,11 +1,13 @@
+"use client";
+
 import { getTotalCount } from "@/api/products";
 import { PRODUCT_MANAGEMENT_ROUTE } from "@/constants/routes";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const PaginationPage = async ({ currentPage, pageLimit = 10 }) => {
-  const totalCount = await getTotalCount();
+const PaginationPage = ({ currentPage, pageLimit = 10 }) => {
+  const [totalCount, setTotalCount] = useState(0);
 
   const totalPages = Math.ceil(totalCount / pageLimit);
   const pageNumbers = [];
@@ -14,7 +16,9 @@ const PaginationPage = async ({ currentPage, pageLimit = 10 }) => {
     pageNumbers.push(i.toString());
   }
 
-  console.log({ totalPages, totalCount, pageNumbers, currentPage });
+  useEffect(() => {
+    getTotalCount().then((data) => setTotalCount(data));
+  }, []);
 
   return (
     <nav className="flex flex-col items-start justify-between p-4 space-y-3 md:flex-row md:items-center md:space-y-0">

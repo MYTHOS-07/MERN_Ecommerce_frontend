@@ -26,6 +26,14 @@ export async function getOrdersByUser(status) {
   return response.data;
 }
 
+export async function getOrdersByMerchant() {
+  let url = "/api/orders/merchant";
+
+  const response = await api.get(url);
+
+  return response.data;
+}
+
 export async function cancelOrder(id) {
   const response = await api.put(`/api/orders/${id}/cancel`);
 

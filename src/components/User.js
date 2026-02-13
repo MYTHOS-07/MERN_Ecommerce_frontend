@@ -43,6 +43,7 @@ const User = () => {
           alt={user.name}
           width={36}
           height={36}
+          loading="eager"
           className="w-full h-full object-cover"
         />
       </button>

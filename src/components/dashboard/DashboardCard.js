@@ -1,6 +1,6 @@
 "use client";
 
-import { getAllOrders } from "@/api/orders";
+import { getAllOrders, getOrdersByUser } from "@/api/orders";
 import React, { useEffect, useState } from "react";
 import { FaShippingFast, FaShoppingBasket } from "react-icons/fa";
 import { FaCheck, FaClock } from "react-icons/fa6";
@@ -12,6 +12,8 @@ import {
   ORDER_STATUS_PENDING,
   ORDER_STATUS_SHIPPED,
 } from "@/constants/order";
+import { useSelector } from "react-redux";
+import { ROLE_ADMIN } from "@/constants/roles";
 
 const DashboardCard = ({ label, value, Icon, className }) => {
   return (
@@ -28,20 +30,30 @@ const DashboardCard = ({ label, value, Icon, className }) => {
 };
 
 const OrderStats = () => {
-  const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+  const { user } = useSelector((state) => state.auth);
+
+  async function getOrders() {
     setLoading(true);
 
-    getAllOrders()
-      .then((data) => {
-        setOrders(data);
-        console.log(data);
-      })
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+    try {
+      const response = user.roles.includes(ROLE_ADMIN)
+        ? await getAllOrders()
+        : await getOrdersByUser();
+
+      setOrders(response);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    getOrders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading)

@@ -11,14 +11,10 @@ export default function Header() {
     <div className="w-full bg-white dark:bg-gray-950 sticky top-0 shadow z-50">
       <div className="container mx-auto py-3 px-4">
         <div className="flex items-center justify-between">
-          {/* logo */}
           <Logo />
-          {/* Navbar */}
           <NavLink />
           <div className="flex items-center gap-2">
-            {/* themeToggler */}
             <ThemeToggler />
-            {/* shopping cart */}
             <HeaderCart />
             <User />
             <button className="block md:hidden px-2 py-1 text-gray-700 dark:text-gray-300">

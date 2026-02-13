@@ -1,7 +1,8 @@
 "use client";
 
-import { getAllOrders } from "@/api/orders";
+import { getAllOrders, getOrdersByMerchant } from "@/api/orders";
 import OrdersTable from "@/components/admin/orders/Table";
+import Spinner from "@/components/Spinner";
 
 import {
   ORDER_STATUS_CANCELLED,
@@ -10,29 +11,43 @@ import {
   ORDER_STATUS_PENDING,
   ORDER_STATUS_SHIPPED,
 } from "@/constants/order";
+import { ROLE_ADMIN } from "@/constants/roles";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const OrderManagementPage = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedStatus, setSelectedStatus] = useState();
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLoading(true);
+  const { user } = useSelector((state) => state.auth);
 
-    getAllOrders(selectedStatus)
-      .then((data) => setOrders(data))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+  async function fetchOrders() {
+    setLoading(true);
+    try {
+      const data = user.roles.includes(ROLE_ADMIN)
+        ? await getAllOrders(selectedStatus)
+        : await getOrdersByMerchant();
+
+      setOrders(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchOrders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedStatus]);
 
-  // if (loading)
-  //   return (
-  //     <div className="flex items-center justify-center">
-  //       <Spinner className="h-12 w-12 fill-primary" />
-  //     </div>
-  //   );
+  if (loading)
+    return (
+      <div className="flex items-center justify-center">
+        <Spinner className="h-12 w-12 fill-primary" />
+      </div>
+    );
 
   return (
     <>
@@ -69,7 +84,11 @@ const OrderManagementPage = () => {
               </div>
             </div>
           </div>
-          <OrdersTable orders={orders} loading={loading} />
+          <OrdersTable
+            orders={orders}
+            loading={loading}
+            disabledAction={!user.roles.includes(ROLE_ADMIN)}
+          />
         </div>
       </section>
     </>

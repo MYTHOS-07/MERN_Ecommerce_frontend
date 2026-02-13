@@ -38,8 +38,6 @@ const UserActionButton = ({ id, roles }) => {
               setShow(false);
             })
             .catch((error) => {
-              console.log(error);
-
               toast.error("Roles update failed.");
             });
         }}

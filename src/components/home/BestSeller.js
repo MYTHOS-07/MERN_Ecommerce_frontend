@@ -9,7 +9,7 @@ const BestSeller = async () => {
   const bestSellerId = "698a2580423cef95a6952529";
 
   const product = await getProductsByID(bestSellerId);
-  console.log(product);
+
 
   return (
     <section className="py-12 bg-white dark:bg-gray-800">

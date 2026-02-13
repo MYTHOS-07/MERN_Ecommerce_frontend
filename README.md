@@ -5,3 +5,7 @@
 ## Merchant credentials
 - merchant@gmail.com
 - merchant@123
+
+## User credentials
+- user@gmail.com
+- user@123

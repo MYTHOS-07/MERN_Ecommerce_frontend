@@ -73,7 +73,7 @@ const ContactSection = () => {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-6">
               Send Us a Message
             </h3>
-            <form action className="space-y-4">
+            <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label

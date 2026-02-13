@@ -1,4 +1,4 @@
-import { PRODUCTS_ROUTE } from "@/constants/routes";
+import { ABOUT_ROUTE, PRODUCTS_ROUTE } from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -25,9 +25,10 @@ const HeroSection = () => {
               >
                 Shop Now
               </Link>
-              <button className="border border-primary text-primary px-6 py-2 rounded-lg dark:text-white hover:bg-primary hover:text-white font-medium transition duration-300">
+              <Link
+                href={ABOUT_ROUTE} className="border border-primary text-primary px-6 py-2 rounded-lg dark:text-white hover:bg-primary hover:text-white font-medium transition duration-300">
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -36,6 +37,7 @@ const HeroSection = () => {
               <Image
                 width={800}
                 height={600}
+                loading="eager"
                 className="rounded-2xl shadow-lg object-cover relative"
                 src="/assets/images/sam-su.webp"
                 alt="Nothing Phone"

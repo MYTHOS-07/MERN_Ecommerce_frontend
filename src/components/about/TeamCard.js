@@ -22,7 +22,7 @@ const TeamCard = () => {
           className="inline-flex  gap-3 items-center text-white bg-primary box-border border border-transparent hover:bg-blue-600 focus:ring-4 focus:ring-primary/30 shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none"
         >
           <FaPhone />
-          Call me
+          Phone
         </button>
         <button
           type="button"

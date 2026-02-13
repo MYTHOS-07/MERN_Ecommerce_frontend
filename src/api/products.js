@@ -22,7 +22,6 @@ export const getProducts = async (searchParams) => {
 // get products by their id
 export const getProductsByID = async (id) => {
   const response = await axios.get(`${config.apiUrl}/api/products/${id}`);
-  
 
   return response.data;
 };

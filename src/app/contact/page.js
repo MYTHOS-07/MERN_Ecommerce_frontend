@@ -17,7 +17,7 @@ const ContactPage = () => {
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5098.733099492013!2d85.29817467749801!3d27.684773059408208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1770918542578!5m2!1sen!2snp"
             height="450"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            reerrorpolicy="no-referrer-when-downgrade"
             className="w-full rounded-xl"
           ></iframe>
         </div>

@@ -137,7 +137,6 @@ const ProfilePage = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 {...register("province")}
               >
-                <option selected>Select category</option>
                 <option value="Koshi">Koshi</option>
                 <option value="Bagmati">Bagmati</option>
                 <option value="Gandaki">Gandaki</option>
