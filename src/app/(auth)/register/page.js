@@ -40,7 +40,7 @@ const RegisterPage = () => {
   }, [error]);
 
   return (
-    <div className="flex items-center justify-center md:w-lg px-4  py-4 md:mt-20 lg:mt-1 bg-white text-white dark:bg-slate-800 rounded-2xl m-auto md:mx-30">
+    <div className="flex items-center justify-center md:w-lg px-4  py-4 md:mt-20 lg:mt-1 bg-white dark:text-white dark:bg-slate-900 rounded-2xl m-auto md:mx-30">
       <div className="flex w-full flex-col max-w-96">
         {/* logo */}
         <Logo className="text-2xl" />
@@ -94,16 +94,16 @@ const RegisterPage = () => {
                 className="mt-2 rounded-md ring ring-gray-200 focus:ring-2 focus:ring-primary outline-none px-3 py-3 w-full"
                 {...register("province")}
               >
-                <option selected className="text-gray-300">
+                <option selected className="text-gray-300 dark:text-white dark:bg-gray-600 dark:hover:bg-gray-950">
                   Province
                 </option>
-                <option value="Koshi">Koshi</option>
-                <option value="Bagmati">Bagmati</option>
-                <option value="Gandaki">Gandaki</option>
-                <option value="Madesh">Madesh</option>
-                <option value="Sudur-Pachim">Sudur-Pachim</option>
-                <option value="Lumbini">Lumbini</option>
-                <option value="Karnali">Karnali</option>
+                <option value="Koshi" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Koshi</option>
+                <option value="Bagmati" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Bagmati</option>
+                <option value="Gandaki" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Gandaki</option>
+                <option value="Madesh" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Madesh</option>
+                <option value="Sudur-Pachim" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Sudur-Pachim</option>
+                <option value="Lumbini" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Lumbini</option>
+                <option value="Karnali" className="dark:text-white dark:bg-gray-900 dark:hover:bg-gray-950">Karnali</option>
               </select>
             </div>
           </div>

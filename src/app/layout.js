@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <MainLayout>
             <Header />
-            <main className="min-h-screen">
+            <main className="min-h-screen dark:bg-gray-800">
               {children}
             </main>
             <Footer />

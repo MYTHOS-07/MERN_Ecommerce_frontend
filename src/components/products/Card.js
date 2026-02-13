@@ -7,7 +7,7 @@ import { PRODUCTS_ROUTE } from "@/constants/routes";
 
 const ProductCard = ({ _id, name, price, brand, category, imageUrls }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition duration-300">
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition duration-300">
       <Link href={`${PRODUCTS_ROUTE}/${_id}`} className="relative">
         {imageUrls.length > 0 ? (
           <Image

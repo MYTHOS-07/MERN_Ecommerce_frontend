@@ -43,7 +43,7 @@ const ProductManagementPage = () => {
   return (
     <>
       <h1 className="text-2xl font-semibold mb-6">Product Management</h1>
-      <section className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+      <section className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg dark:border-2 dark:border-gray-600">
         <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
           <div className="flex items-center flex-1 space-x-4">
             <h5>

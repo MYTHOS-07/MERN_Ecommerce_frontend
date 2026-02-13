@@ -20,7 +20,7 @@ const ClientLayout = ({ children }) => {
     return (
       <>
         <SideBar />
-        <div className="p-6 sm:ml-64">{children}</div>
+        <div className="p-6 sm:ml-64 dark:text-white">{children}</div>
       </>
     );
 

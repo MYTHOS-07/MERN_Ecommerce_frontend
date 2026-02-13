@@ -18,7 +18,7 @@ import { ROLE_ADMIN } from "@/constants/roles";
 const DashboardCard = ({ label, value, Icon, className }) => {
   return (
     <div
-      className={`shadow-md rounded-xl px-8 py-6 flex items-center gap-5 border-l-4 ${className ?? ""}`}
+      className={`shadow-md dark:border-gray-200 dark:shadow-lg dark:bg-gray-900 rounded-xl px-8 py-6 flex items-center gap-5 border-l-4 ${className ?? ""}`}
     >
       {Icon}
       <div>

@@ -34,7 +34,7 @@ const OrderCard = ({ order }) => {
   }
 
   return (
-    <div className="main-box border border-gray-200 dark:border-gray-600 rounded-xl pt-6 max-w-xl max-lg:mx-auto lg:max-w-full mb-5 overflow-hidden">
+    <div className="main-box border border-gray-200 dark:border-gray-600 rounded-xl pt-6 max-w-xl max-lg:mx-auto lg:max-w-full mb-5 overflow-hidden dark:bg-gray-900 bg-gray-200">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between px-6 pb-6 border-b border-gray-200 dark:border-gray-600">
         <div className="data">
           <p className="font-semibold text-base leading-7 ">

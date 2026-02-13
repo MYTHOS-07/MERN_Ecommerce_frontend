@@ -20,7 +20,7 @@ const UserManagementPage = () => {
   return (
     <>
       <h1 className="text-2xl font-semibold mb-6">User Management</h1>
-      <section className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+      <section className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden dark:border-2 dark:border-gray-600">
         <UsersTable users={users} loading={loading} />
       </section>
     </>

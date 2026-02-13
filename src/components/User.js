@@ -81,12 +81,6 @@ const User = () => {
                 >
                   Profile
                 </Link>
-                <Link
-                  href={""}
-                  className="py-1 px-4 text-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 hover:bg-gray-200"
-                >
-                  Settings
-                </Link>
                 <button
                   onClick={() => dispatch(logout())}
                   className="py-1 px-4 text-red-600 dark:text-red-100 dark:hover:bg-red-700 hover:bg-red-200 text-left cursor-pointer"

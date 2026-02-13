@@ -26,7 +26,7 @@ const AuthLayout = ({ children }) => {
         className="h-full w-full absolute top-0 left-0 object-cover -z-1 select-none"
       ></Image>
 
-      <div className="container max-auto p-3 md:p-6 ">{children}</div>
+      <div className="container max-auto p-3 md:p-6 dark:bg-gray-800 dark:text-white">{children}</div>
     </section>
   );
 };

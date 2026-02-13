@@ -4,7 +4,7 @@ import { FaEnvelope, FaPhone } from "react-icons/fa6";
 
 const TeamCard = () => {
   return (
-    <div className="flex flex-col items-center bg-gray-100 shadow-md dark:bg-gray-800 rounded-2xl px-6 py-8">
+    <div className="flex flex-col items-center bg-gray-100 shadow-md dark:bg-gray-900 rounded-2xl px-6 py-8">
       <Image
         className="w-24 h-24 mb-6 rounded-full object-cover"
         src="https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=2048x2048&w=is&k=20&c=R_Neuu8r9szb2yH56Ck9q9Tfd3kLFWClJGp_riHSKEE="
@@ -26,7 +26,7 @@ const TeamCard = () => {
         </button>
         <button
           type="button"
-          className="inline-flex items-center gap-3 self-start w-auto text-body bg-gray-100 hover:bg-gray-200  dark:bg-gray-900 dark:hover:bg-gray-950 hover:text-heading shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5"
+          className="inline-flex border-2 border-gray-300 items-center gap-3 self-start w-auto text-body bg-gray-100 hover:bg-gray-200  dark:bg-gray-900 dark:hover:bg-gray-950 hover:text-heading shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5"
         >
           <FaEnvelope />
           Message

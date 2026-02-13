@@ -11,7 +11,7 @@ export const metadata = {
 const AboutPage = () => {
   return (
     <>
-      <section className="md:py-16">
+      <section className="md:py-16 ">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto px-4">
             <div className="bg-linear-to-r from-primary/30 to-blue-300 rounded-3xl p-8 md:p-12">
@@ -22,7 +22,7 @@ const AboutPage = () => {
                     simplify technology.
                   </span>
                 </h1>
-                <p className="text-gray-600 dark:text-gray-800 mb-8">
+                <p className="text-gray-600 dark:text-gray-100 mb-8">
                   An e-commerce platform is a comprehensive software solution
                   that enables businesses to build, manage, and scale their
                   online storefronts by integrating product catalogs, secure
@@ -46,7 +46,7 @@ const AboutPage = () => {
       </section>
       <section
         id="our-story"
-        className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800"
+        className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800 dark:text-white"
       >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Story</h2>
@@ -94,7 +94,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 dark:text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
 
