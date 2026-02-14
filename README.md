@@ -2,6 +2,13 @@
 
 A full-featured e-commerce web app built with Next.js App Router. It includes client and admin areas, authentication pages, product browsing, cart and checkout, order management, and a role-based admin dashboard.
 
+![E-commerce Dashboard](https://res.cloudinary.com/dcjobwnp5/image/upload/v1771085171/image_12_tkpxeo.png)
+
+![Product Management](https://res.cloudinary.com/dcjobwnp5/image/upload/v1771085173/image_13_l62way.png)
+
+![Product Management](https://res.cloudinary.com/dcjobwnp5/image/upload/v1771085174/image_14_gp2bf9.png)
+
+
 ## What this project demonstrates
 - End-to-end e-commerce flow: browse products, add to cart, and place orders
 - Authentication screens and guarded layouts for public, client, and admin areas
@@ -180,6 +187,13 @@ next-new-ecom/
 - Orders and payment: src/app/orders and src/components/orders
 - Admin management: src/app/(client)/(admin) and src/components/admin
 - Global state: src/redux with auth, cart, and preferences slices
+
+![E-commerce Dashboard](https://res.cloudinary.com/dcjobwnp5/image/upload/v1771085169/image_17_jmcl96.png)
+
+![E-commerce Dashboard](https://res.cloudinary.com/dcjobwnp5/image/upload/v1771085169/image_16_vkkrk3.png)
+
+![Product Management](https://res.cloudinary.com/dcjobwnp5/image/upload/v1771085169/image_15_reouac.png)
+
 
 ## Admin and test credentials
 - Admin
