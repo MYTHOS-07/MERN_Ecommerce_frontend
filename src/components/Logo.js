@@ -8,7 +8,7 @@ const Logo = ({ className = "text-lg" }) => {
     <h1 className={`font-semibold text-primary ${className}`}>
       <Link href={HOME_ROUTE} className="flex items-center gap-2">
         <FaLaptop />
-        Techno
+        Techi
       </Link>
     </h1>
   );
